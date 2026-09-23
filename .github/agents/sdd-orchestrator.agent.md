@@ -26,11 +26,11 @@ Your job is to guide a functional request through the repo's spec-driven workflo
 - `@spec-test-implementer`: adds and validates tests for the touched React scope (read, search, edit, execute, todo).
 - `@spec-implementation-reviewer`: reviews the implementation against the spec (read, search, execute).
 
-Spec creation and small scaffolding tasks are handled by the repo skill `/nuestra-spec`.
+Spec creation and small scaffolding tasks are handled by the repo skill `/nueva-spec`.
 
 ## Reference flow
 
-1. Spec exists and is complete. If not, the request must go through `/nuestra-spec` before continuing.
+1. Spec exists and is complete. If not, the request must go through `/nueva-spec` before continuing.
 2. Audit the spec with `@spec-auditor`.
 3. Convert the spec into a technical plan with `@spec-to-tech-plan`.
 4. Implement the React feature in the app and components affected by the change.

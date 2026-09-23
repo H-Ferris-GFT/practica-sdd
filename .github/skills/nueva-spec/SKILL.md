@@ -1,10 +1,10 @@
 ---
-name: nuestra-spec
+name: nueva-spec
 description: 'Crea o completa una spec SDD para la app React del proyecto, siguiendo el flujo de trabajo de la repo y evitando duplicar requisitos ya definidos.'
 argument-hint: 'Describe la funcionalidad, el objetivo del usuario, el alcance y cualquier regla funcional que deba quedar documentada en la spec'
 ---
 
-# Nuestra Spec
+# Nueva Spec
 
 ## Cuándo usar esta skill
 
@@ -18,7 +18,7 @@ argument-hint: 'Describe la funcionalidad, el objetivo del usuario, el alcance y
 - `README.md`
 - `.github/copilot_instructions.md`
 - `sdd/specs/` para revisar el estilo y los IDs ya usados.
-- `.github/skills/new-spec/assets/SPEC_TEMPLATE.md` para la base de formato.
+- `.github/skills/nueva-spec/assets/SPEC_TEMPLATE.md` para la base de formato.
 
 ## Procedimiento
 

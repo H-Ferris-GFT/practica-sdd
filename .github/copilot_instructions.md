@@ -7,7 +7,7 @@ Este repositorio sigue un flujo de desarrollo guiado por specs. Todo cambio func
 - Cada spec vive en su propia carpeta bajo `sdd/specs/`, con formato `sdd/specs/SPEC-XXX-slug/`.
 - El archivo principal debe llamarse igual que la carpeta: `sdd/specs/SPEC-XXX-slug/SPEC-XXX-slug.md`.
 - El plan técnico asociado debe guardarse en la misma carpeta como `plan-tecnico.md`.
-- La base del formato es `.github/skills/new-spec/assets/SPEC_TEMPLATE.md`.
+- La base del formato es `.github/skills/nueva-spec/assets/SPEC_TEMPLATE.md`.
 - Si falta información relevante, debe documentarse en una sección `Dudas abiertas`; no se deben asumir reglas de negocio ni comportamientos sin evidencia.
 - Si llega una petición funcional sin spec, el primer paso es crear o completar la spec antes de implementar cualquier cambio.
 - No inventes estados, edge cases, consecuencias ni criterios de prueba que no estén definidos explícitamente en la spec.
@@ -19,7 +19,7 @@ Respetar este orden como secuencia por defecto:
 1. Crear o completar la spec.
 2. Auditar la spec para detectar ambigüedades, huecos o contradicciones.
 3. Convertir la spec en plan técnico.
-4. Implementar la funcionalidad en la app frontend.
+4. Implementar la funcionalidad en la app React.
 5. Revisar la implementación contra la spec.
 
 Si la funcionalidad no está suficientemente definida, hay que volver a la spec antes de seguir implementando.
@@ -34,6 +34,7 @@ Si la funcionalidad no está suficientemente definida, hay que volver a la spec 
 
 - `npm start`
 - `npm test -- --watch=false`
+- `npm run build`
 
 ## Reglas para trabajar en este repositorio
 
@@ -46,6 +47,5 @@ Si la funcionalidad no está suficientemente definida, hay que volver a la spec 
 
 ## Customizaciones disponibles
 
-- Skill `/new-spec`: crea una spec nueva en `sdd/specs/` siguiendo el patrón del repositorio.
-- Skill `/nuestra-spec`: mantiene el mismo objetivo de crear la especificación funcional del cambio.
-- Agentes y skills de SDD deben seguir el mismo principio: documentar primero y luego implementar desde la spec.
+- Skill `/nueva-spec`: crea o completa la especificación funcional del cambio para la app React del proyecto.
+- Agentes de SDD del repositorio deben seguir el mismo principio: documentar primero y luego implementar desde la spec, siempre dentro del alcance real de la aplicación React.
