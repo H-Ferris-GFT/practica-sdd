@@ -43,6 +43,12 @@ const App = () => {
       return;
     }
 
+    if (normalizedQuery.length < 3) {
+      setMovies([]);
+      setError('La búsqueda debe tener al menos 3 letras');
+      return;
+    }
+
     setLoading(true);
     setError('');
 

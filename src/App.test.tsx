@@ -146,6 +146,17 @@ describe('App', () => {
     ]);
   });
 
+  test('shows an error when the query has fewer than 3 characters', () => {
+    render(<App />);
+
+    const input = screen.getByPlaceholderText(/buscar películas/i);
+    fireEvent.change(input, { target: { value: 'ab' } });
+    fireEvent.click(screen.getByRole('button', { name: /buscar/i }));
+
+    expect(screen.getByRole('alert')).toHaveTextContent(/al menos 3 letras/i);
+    expect(mockFetch).not.toHaveBeenCalled();
+  });
+
   test('shows an error when the query is empty', () => {
     render(<App />);
 
