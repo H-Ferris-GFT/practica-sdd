@@ -1,0 +1,9 @@
+com\example\library\book\DuplicateBookException.class
+com\example\library\book\BookController.class
+com\example\library\book\BookResponse.class
+com\example\library\book\BookService.class
+com\example\library\api\GlobalExceptionHandler.class
+com\example\library\book\Book.class
+com\example\library\book\CreateBookRequest.class
+com\example\library\api\ApiError.class
+com\example\library\LibraryApplication.class
