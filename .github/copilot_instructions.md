@@ -1,30 +1,51 @@
 # Instrucciones de Copilot para este workspace
 
-## Regla principal: trabajamos con SDD
+## Principio base: SDD siempre
 
-En este workspace, toda funcionalidad nueva o cambio funcional se trabaja primero como una spec. Siempre.
+Este repositorio sigue un flujo de desarrollo guiado por specs. Todo cambio funcional debe empezar por una especificación antes de proponer o escribir implementación.
 
-- Cada spec debe vivir en su propia carpeta dentro de `sdd/specs/`, con formato `sdd/specs/SPEC-XXX-slug/`.
-- El archivo principal de la spec debe llamarse igual que su carpeta: `sdd/specs/SPEC-XXX-slug/SPEC-XXX-slug.md`.
-- El plan tecnico de esa spec debe guardarse en la misma carpeta, en `plan-tecnico.md`.
-- La base de cada spec es `.github/skills/new-spec/assets/SPEC_TEMPLATE.md`.
-- Si falta informacion, se documenta en `Dudas abiertas`. No se dejan huecos en silencio.
-- Si una peticion funcional llega sin spec, el primer paso es crearla o completar la existente antes de proponer implementacion.
-- No inventes reglas de negocio, estados, consecuencias, edge cases ni criterios de prueba que no esten definidos. Si faltan, hay que pedirlos o dejarlos explicitamente abiertos en la spec.
+- Cada spec vive en su propia carpeta bajo `sdd/specs/`, con formato `sdd/specs/SPEC-XXX-slug/`.
+- El archivo principal debe llamarse igual que la carpeta: `sdd/specs/SPEC-XXX-slug/SPEC-XXX-slug.md`.
+- El plan técnico asociado debe guardarse en la misma carpeta como `plan-tecnico.md`.
+- La base del formato es `.github/skills/new-spec/assets/SPEC_TEMPLATE.md`.
+- Si falta información relevante, debe documentarse en una sección `Dudas abiertas`; no se deben asumir reglas de negocio ni comportamientos sin evidencia.
+- Si llega una petición funcional sin spec, el primer paso es crear o completar la spec antes de implementar cualquier cambio.
+- No inventes estados, edge cases, consecuencias ni criterios de prueba que no estén definidos explícitamente en la spec.
 
 ## Flujo de trabajo esperado
 
-El flujo de referencia esta en `README.md` y debe respetarse como secuencia por defecto:
+Respetar este orden como secuencia por defecto:
 
 1. Crear o completar la spec.
-2. Auditar la spec para detectar ambiguedades y huecos.
-3. Convertir la spec en plan tecnico.
-4. Implementar backend.
-5. Implementar frontend.
-6. Revisar la implementacion contra la spec.
+2. Auditar la spec para detectar ambigüedades, huecos o contradicciones.
+3. Convertir la spec en plan técnico.
+4. Implementar la funcionalidad en la app frontend.
+5. Revisar la implementación contra la spec.
 
-Si backend o frontend no estan suficientemente definidos en la spec, hay que volver a la spec antes de seguir implementando.
+Si la funcionalidad no está suficientemente definida, hay que volver a la spec antes de seguir implementando.
+
+## Estructura del proyecto
+
+- Aplicación principal: la raíz del repositorio, una aplicación React con `package.json` y `src/`.
+- Specs funcionales: `sdd/specs/`.
+- Documentación principal: [README.md](../README.md)
+
+## Comandos relevantes
+
+- `npm start`
+- `npm test -- --watch=false`
+
+## Reglas para trabajar en este repositorio
+
+- Mantén el trabajo alineado con la spec y con la secuencia de SDD.
+- Si la petición es ambigua, pide aclaraciones o deja la ambigüedad documentada antes de implementar.
+- Haz cambios mínimos y enfocados; no introduzcas patrones distintos de los ya usados en el proyecto.
+- Revisa primero la documentación relevante y enlázala en lugar de duplicarla.
+- Antes de planificar o implementar, inspecciona la estructura real del workspace y usa los nombres, carpetas y límites que existan en verdad.
+- Si la spec y el código entran en conflicto, la implementación debe reconciliarse contra la spec o la spec debe actualizarse explícitamente.
 
 ## Customizaciones disponibles
 
-- Skill `/nuestra-spec`: crea una spec nueva en su propia carpeta dentro de `sdd/specs/`.
+- Skill `/new-spec`: crea una spec nueva en `sdd/specs/` siguiendo el patrón del repositorio.
+- Skill `/nuestra-spec`: mantiene el mismo objetivo de crear la especificación funcional del cambio.
+- Agentes y skills de SDD deben seguir el mismo principio: documentar primero y luego implementar desde la spec.
