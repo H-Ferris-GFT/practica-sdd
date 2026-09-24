@@ -12,6 +12,8 @@ argument-hint: 'Indica la ruta de la spec o la funcionalidad para la que quieres
 - Cuando quieres convertir una historia de usuario en un plan ejecutable para la app React.
 - Cuando necesitas documentar el alcance, componentes afectados y pruebas mínimas antes de programar.
 
+Esta skill es la guía de uso del proceso. La ejecución formal y la escritura del `plan-tecnico.md` la realiza el agente `@spec-to-tech-plan`, que es quien persiste el artefacto en la carpeta de la spec.
+
 ## Fuentes canónicas
 
 - `README.md`

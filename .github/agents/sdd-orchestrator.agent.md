@@ -12,6 +12,7 @@ Your job is to guide a functional request through the repo's spec-driven workflo
 ## Constraints
 
 - Do not write specs, plans, code, or tests yourself. You coordinate; the specialized agents execute.
+- The orchestration role is not a duplicate of the review or planning roles: it decides the phase order and delegates to the correct agent.
 - Never skip a phase silently. If you skip or shortcut one, state why.
 - Respect the canonical SDD sequence defined in `README.md` and `.github/copilot_instructions.md`.
 - Enforce the gate between phases: do not advance while the previous phase reports a blocker or a `NOT READY` verdict.
@@ -26,16 +27,19 @@ Your job is to guide a functional request through the repo's spec-driven workflo
 - `@spec-test-implementer`: adds and validates tests for the touched React scope (read, search, edit, execute, todo).
 - `@spec-implementation-reviewer`: reviews the implementation against the spec (read, search, execute).
 
-Spec creation and small scaffolding tasks are handled by the repo skill `/nueva-spec`.
+Spec creation is handled by the repo skill `/nueva-spec`.
+Spec review before implementation or planning is handled by `/revisar-spec`.
+Technical planning is handled by `/plan-tecnico`.
 
 ## Reference flow
 
-1. Spec exists and is complete. If not, the request must go through `/nueva-spec` before continuing.
-2. Audit the spec with `@spec-auditor`.
-3. Convert the spec into a technical plan with `@spec-to-tech-plan`.
-4. Implement the React feature in the app and components affected by the change.
-5. Implement or reinforce tests with `@spec-test-implementer`.
-6. Review the implementation against the spec with `@spec-implementation-reviewer`.
+1. If the spec does not exist, route through `/nueva-spec`.
+2. If the spec exists but is not ready, route through `/revisar-spec` before continuing.
+3. Audit the spec with `@spec-auditor`.
+4. Convert the spec into a technical plan with `@spec-to-tech-plan`.
+5. Implement the React feature in the app and components affected by the change.
+6. Implement or reinforce tests with `@spec-test-implementer`.
+7. Review the implementation against the spec with `@spec-implementation-reviewer`.
 
 If the requested behavior is not sufficiently defined in the spec, stop and route the work back to the spec before implementing.
 

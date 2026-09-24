@@ -24,6 +24,21 @@ Respetar este orden como secuencia por defecto:
 
 Si la funcionalidad no está suficientemente definida, hay que volver a la spec antes de seguir implementando.
 
+## Checklist operativo del flujo SDD
+
+- [ ] Confirmar que la funcionalidad tiene un alcance real de la app React.
+- [ ] Revisar si ya existe una spec equivalente en `sdd/specs/`.
+- [ ] Si no existe, crear o completar la spec con `/nueva-spec`.
+- [ ] Revisar la spec con `/revisar-spec` si hace falta validar claridad o completitud.
+- [ ] Ejecutar la auditoría formal con `@spec-auditor` y confirmar veredicto `READY` o `NOT READY`.
+- [ ] Si la spec no está lista, volver a la especificación antes de implementar.
+- [ ] Convertir la spec aprobada en `plan-tecnico.md` con `/plan-tecnico` o `@spec-to-tech-plan`.
+- [ ] Implementar solo lo definido en la spec y en el plan técnico.
+- [ ] Añadir o ajustar tests del alcance afectado en React.
+- [ ] Ejecutar la validación mínima del comportamiento afectado.
+- [ ] Revisar la implementación contra la spec con `@spec-implementation-reviewer`.
+- [ ] Cerrar solo cuando el flujo se haya completado y no queden huecos funcionales.
+
 ## Estructura del proyecto
 
 - Aplicación principal: la raíz del repositorio, una aplicación React con `package.json` y `src/`.
@@ -48,4 +63,12 @@ Si la funcionalidad no está suficientemente definida, hay que volver a la spec 
 ## Customizaciones disponibles
 
 - Skill `/nueva-spec`: crea o completa la especificación funcional del cambio para la app React del proyecto.
+- Skill `/revisar-spec`: guía la revisión de una spec existente para confirmar si es clara, comprobable y lista para avanzar al plan o la implementación.
+- Skill `/plan-tecnico`: guía la transformación de una spec aprobada en un plan técnico ejecutable para la app React del proyecto.
 - Agentes de SDD del repositorio deben seguir el mismo principio: documentar primero y luego implementar desde la spec, siempre dentro del alcance real de la aplicación React.
+
+## Separación de responsabilidades
+
+- Los agentes son ejecutores formales del flujo SDD: coordinan, validan decisiones y escriben o actualizan los artefactos de trabajo.
+- Las skills son entradas de ayuda o plantillas de uso para esas mismas tareas, orientadas a quien trabaja con Copilot o a la invocación desde el repositorio.
+- No deben duplicar la misma tarea con dos nombres equivalentes; cada uno debe tener un rol distinto dentro del flujo: spec, revisión, plan técnico, implementación y validación.

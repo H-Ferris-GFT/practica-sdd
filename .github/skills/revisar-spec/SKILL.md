@@ -13,6 +13,8 @@ argument-hint: 'Indica la ruta de la spec o describe la funcionalidad que quiere
 - Antes de implementar una funcionalidad nueva en la app React.
 - Cuando se quiere confirmar que la spec es clara, verificable y accionable.
 
+Esta skill es la entrada general de revisión. La decisión formal del gate de calidad la toma el agente `@spec-auditor`, que emite el veredicto `READY` o `NOT READY` y marca si la spec está lista para avanzar.
+
 ## Fuentes canónicas
 
 - `README.md`
